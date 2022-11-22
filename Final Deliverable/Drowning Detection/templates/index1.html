@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="author" content="templatemo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <title>Drowning Detection</title>
+
+    <!-- Bootstrap core CSS -->
+    
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/templatemo-liberty-market.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/owl.css') }}" />
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}" />
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+   
+  </head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+                     <img src="{{ url_for('static', filename='images/Untitled.png') }}" alt="">   
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><a href="/" >Home</a></li>
+                        <li><a href="/login">Sign In</a></li>
+                        <li><a href="/register">Sign Up</a></li>
+                        <li><a href="/home" class="active">Drown Detect</a></li>
+                    </ul>   
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- ***** Main Banner Area Start ***** -->
+  <div class="main-banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 align-self-center">
+          <div class="header-text">
+            <h6>Let's Start.</h6>
+            <h2>Drowning Detection</h2>
+            <p>It is an active drowning detection system using artificial intelligence.</p>
+            <div class="buttons">
+            <div class="main-button">
+                <a href="/step2">Detect</a>
+            </div>  
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 offset-lg-1">
+          <div class="owl-banner owl-carousel">
+            <div class="item">
+              <img src="{{ url_for('static', filename='images/banner-01.png') }}" alt="">
+            </div>
+            <div class="item">
+              <img src="{{ url_for('static', filename='images/banner-02.png') }}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Main Banner Area End ***** -->
+  
+
+
+  <div class="currently-market">
+    <div class="container">
+      <div class="row">            
+        <div class="col-lg-6">
+          <div class="section-heading">
+            <div class="line-dec"></div>
+            <h2><em>Current</em> Drowning Details.</h2>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="row grid">
+            <div class="col-lg-6 currently-market-item all msc">
+              <div class="item">
+                {% if prediction_text == "0" %}
+                <h2>" The Person is Swimming "</h2>
+                {% elif prediction_text == "1" %}
+                <div class="left-image">
+                  <img src="{{ url_for('static', filename='images/avatar.png') }}" alt="" style="border-radius: 20px; min-width: 195px;">
+                </div>
+                <div class="right-content">
+                  <h4>1 Person Drowing</h4>
+                  <div class="line-dec"></div>
+                  <span class="bid">
+                    Age<br><strong>30-35</strong><br>                  
+                  </span>
+                  <span class="ends">
+                    Gender<br><strong>Male</strong><br>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{{ url_for('static', filename='jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}" ></script>
+
+  <script src="{{ url_for('static', filename='js/isotope.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/owl-carousel.js') }}"></script>
+
+  <script src="{{ url_for('static', filename='js/tabs.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/popup.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+</body>
+</html>
